@@ -104,3 +104,55 @@ def parse_address(address):
 (protocol, domain, port) = parse_address('http://example.com:80')
 print(protocol,domain,port)
 
+#Modular Python Application
+#A module is simply a container for a chunk of code that can be reused in an application.
+#The Python Standard Library contains many modules that are useful in everyday tasks. Let's consider the random module.
+suits = ['hearts','clubs','spades','diamonds']
+ranks = [str(r) for r in range(2,11)]   #The range function will generate integers from the start index up to the stop index, so 2 through 10 in this example. And the str initializer will cast the integers to strings. Finally, the list initializer will split the string into a list.
+ranks.extend(list('AKQJ'))             
+
+#Now import the random module and use the choice function to select a suit and rank.
+
+import random
+suit = random.choice(suits)
+rank = random.choice(ranks)
+card = f'{rank} of {suit}'
+print(card)
+
+
+from random import choice 
+suit = choice(suits)
+rank = choice(ranks)
+card = f'{rank} of {suit}'
+print(card)
+
+#Both work the same. Which one should you use? That depends. To avoid naming conflicts, it is best to import the module and refer to the individual members. 
+
+""" from random import * #This will import everything from the random module.
+# This is common in data analysis with Python. You will often see these two modules aliased.
+import numpy as np   
+import pandas as pd
+import matplotlib.pyplot as plt
+ """
+#Creating a module
+import random as rnd
+
+suit = random.choice(suits)
+rank = random.choice(ranks)
+card = f'{rank} of {suit}'
+
+def draw_card():
+    suit = rnd.choice(suits)
+    rank = rnd.choice(ranks)
+    card = f'{rank} of {suit}'
+    return card
+#in cards.py file
+from cards import draw_card
+
+def draw_hand(num_cards):
+    hand = [draw_card() for _ in range(num_cards)]
+    return hand
+
+if __name__ == '__main__':
+    poker_hand = draw_hand(5)
+print(poker_hand)
