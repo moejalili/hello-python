@@ -164,6 +164,6 @@ for i in range(5):
     print(i)
     time.sleep(1)
 
-""" for i in range(1000):
-	print(5\*\*i) """
+for i in range(100):
+	print(5**i)
 
