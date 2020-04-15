@@ -147,7 +147,7 @@ def draw_card():
     card = f'{rank} of {suit}'
     return card
 #in cards.py file
-from cards import draw_card
+""" from cards import draw_card
 
 def draw_hand(num_cards):
     hand = [draw_card() for _ in range(num_cards)]
@@ -155,4 +155,15 @@ def draw_hand(num_cards):
 
 if __name__ == '__main__':
     poker_hand = draw_hand(5)
-print(poker_hand)
+print(poker_hand) """
+
+
+import time, sys 
+
+for i in range(5):
+    print(i)
+    time.sleep(1)
+
+""" for i in range(1000):
+	print(5\*\*i) """
+
